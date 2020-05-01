@@ -9,6 +9,7 @@ body {
     color: rgb(255, 255, 255);
     margin: 20px 20px;
     font-size: 28px;
+
 }
 
 .cabecalho {
@@ -73,6 +74,33 @@ body {
 
 .menu li a:hover {
     color: #074787;
+}
+
+@media screen and (min-width: 1024px) {
+    .bt_menu {
+        display: none;
+    }
+
+    .menu {
+            background: initial;
+            padding-top: 25px;
+            position: relative;
+            top: initial;
+            z-index: initial;
+            transition: initial;
+            overflow: initial;
+    }
+
+    .menu ul {
+        transition: initial;
+        border: none;
+    }
+
+    .menu ul li {
+        transition: initial;
+        display: inline;
+        border: none;
+    }
 }
 
 /*=== BANNER ===*/
@@ -169,3 +197,5 @@ footer {
  .arearestrita {
      padding-top: 5px;
  }
+
+ 
