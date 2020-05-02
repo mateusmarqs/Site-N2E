@@ -80,17 +80,18 @@ body {
 .slideshow {
     background-image: url(../img/slider1.jpg);
     width: 90%;
-    background-size: 100%;
+    background-size: 140%;
+    background-position: center;
     background-repeat: no-repeat;
     margin-left: 5%;
-    height: 400px;
+    height: 300px;
     overflow: hidden;
     transition: 0.8s;
     text-align: center;
 }
 
 .bts {
-    padding-top: 360px;
+    margin-top: 260px;
 }
 
 .bt-next {
@@ -136,7 +137,10 @@ main {
 }
 
 .bemvindo h4 {
-    padding-bottom: 10px;
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
  /*=== BLOCOS ===*/
@@ -227,6 +231,15 @@ footer {
     .menu ul li {
         display: inline;
         border: none;
+    }
+
+    .slideshow {
+        background-size: 100%;
+        height: 400px;
+    }
+
+    .bts {
+        margin-top: 360px;
     }
 }
 
