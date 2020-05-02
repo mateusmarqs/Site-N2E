@@ -13,9 +13,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
         <link rel="icon" href="img/logo.png">
     </head>
-    <body>
+    <body onload="image1()">
         <header class="cabecalho">
-            <h2 class="titulo">Núcleo de Eletricidade</h2>
+            <img class="logo" src="img/logosemperna.png">
             <button class="bt_menu" id="closebt" onclick="openMenu()"></button>
             <nav class="menu" id="bt">
                 <ul>
@@ -29,9 +29,15 @@
                 </ul>
             </nav>
         </header>
-        <div class="banner">
-            <img class="logocbrilho" src="img/logocombrilho.png">
+        <!-- inicio slider -->
+        <div class="slideshow" id="next">
+            <div class="bts">
+                <button class="bt-atual" id="bt1" onclick="image1()"></button>
+                <button class="bt-next" id="bt2" onclick="image2()"></button>
+                <button class="bt-next" id="bt3" onclick="image3()"></button>
+            </div>
         </div>
+        <!-- fim slider -->
         <main>
             <div class="bemvindo">
                 <h4>Bem Vindo</h4>
@@ -89,6 +95,7 @@
                 </p>
             </a>
         </footer> 
-        <script src="js/slidemenu.js"></script>  
+        <script src="js/slidemenu.js"></script>
+        <script src="js/sliderbanner.js"></script>  
     </body>
 </html>
