@@ -147,12 +147,15 @@ main {
 
  .conquistas {
     padding-top: 10px;
-    padding-bottom: 10px;
     text-align: left;
  }
 
+ .conquistas p {
+    padding-bottom: 30px;
+ }
+
 .iconblocos {
-    padding-top: 10px;
+    padding-top: 30px;
     padding-bottom: 10px;
     display: block;
     margin-left: auto;
