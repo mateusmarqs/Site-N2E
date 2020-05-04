@@ -15,11 +15,27 @@
         <div class="formulario">
           <div class="caixa">
             <img class="logocbrilho" src="img/logocombrilho.png">
-              <form action="/action_page.php" method="post">
+              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                   Usuário:  <input type="text" placeholder="Seu login." name="username">
                   Senha:  <input type="password" placeholder="Sua senha." name="password">
                   <button type="submit">Login</button>
               </form>
+              <?php
+              include ('connect_db.php');
+
+              function test_input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+              }
+
+              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $username = test_input($_POST["username"]);
+                $password = test_input($_POST["password"]);
+              }
+              
+              ?>
             </div>
         </div>
         <script src="https://kit.fontawesome.com/142a68963a.js" crossorigin="anonymous"></script>    
