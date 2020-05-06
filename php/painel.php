@@ -6,6 +6,21 @@ if (!$_SESSION['username']) {
     header('Location: login.php');
     exit();
 }
+// Inserindo no Banco de Dados
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'connect_db.php';
+    $name = mysqli_real_escape_string($connect, $_POST['name']);
+    $username = mysqli_real_escape_string($connect, $_POST['newusername']);
+    $password = mysqli_real_escape_string($connect, $_POST['newpassword']);
+    $query  = "INSERT INTO usuarios(name,username,password) VALUES('$name','$username', md5('$password'));";
+    $result = mysqli_query($connect, $query);
+    if ($result) {
+        echo "Novo usuário cadastrado com sucesso.";
+        exit();
+    } else {
+        echo 'Error '.mysqli_error($connect);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +39,8 @@ if (!$_SESSION['username']) {
     </head>
     <body>
         <header>
-            <p>Painel de Controle</p>    
+            <p>Painel de Controle</p>
+            <a href="logout.php"><button>Sair</button></a>
         </header>
         <main>
             <div class="usuarios">
@@ -32,18 +48,18 @@ if (!$_SESSION['username']) {
                     <button class="bt-alternative" onclick="remover_open()" id="remover">Remover usuário</button>
                     <div class="form-cadastrar" id="form-cadastrar">
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                            Usuário: <input type="text" placeholder="Seu login." name="username">
+                            Nome: <input type="text" placeholder="Seu login." name="name">
                             <br>
-                            Senha: <input type="password" placeholder="Sua senha." name="password">
+                            Usuário: <input type="text" placeholder="Seu login." name="newusername">
+                            <br>
+                            Senha: <input type="password" placeholder="Sua senha." name="newpassword">
                             <br>
                             <button type="submit">Cadastrar</button>
                         </form>
                     </div>
                     <div class="form-remover" id="form-remover">
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                            Usuário: <input type="text" placeholder="Seu login." name="username">
-                            <br>
-                            Senha: <input type="password" placeholder="Sua senha." name="password">
+                            Usuário: <input type="text" placeholder="Seu login." name="remove_username">
                             <br>
                             <button type="submit" class="bt-alternative">Remover</button>
                         </form>
