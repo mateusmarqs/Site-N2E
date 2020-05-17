@@ -1,0 +1,21 @@
+
+.circulo {
+    border-radius: 100%;
+    background-color: rgb(85, 255, 113);
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+    background-image: url(../img/correto.svg);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+p {
+    margin-top: 20px;
+    text-align: center;
+}
+

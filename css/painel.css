@@ -49,7 +49,7 @@ button:hover {
     display: none;
     margin-top: 10px;
     border: rgb(136, 136, 136) solid 2px;
-    height: 180px;
+    height: 150px;
     overflow: hidden;
     transition: 1s;
 }
